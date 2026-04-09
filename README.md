@@ -10,13 +10,6 @@ Le programme utilise plusieurs filtres :
 * lettres à exclure
 * recherche de substring
 
-## Structure du projet
-
-* bin : contient l'exécutable
-* src : contient les fichiers source (.c)
-* include : contient les fichiers header (.h)
-* ressource : contient la base de mots
-
 ## Compilation
 
 ```bash
