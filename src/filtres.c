@@ -15,3 +15,6 @@ int contient_lettre(char *mot, char lettre) {
 int exclut_lettre(char *mot, char lettre) {
     return !contient_lettre(mot, lettre);
 }
+int contient_substring(char *mot, char *substring) {
+    return strstr(mot, substring) != NULL;
+}
