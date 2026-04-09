@@ -12,6 +12,7 @@ int main() {
 
     char incluses[MAX_LETTERS];
     char exclues[MAX_LETTERS];
+    char substring[MAX_LETTERS];
 
     file = fopen("ressource/bdd_wordle.txt", "r");
     
@@ -20,11 +21,14 @@ int main() {
         return 1;
     }
 
-    printf("Entrer les lettres a INCLURE (ex: ae) : ");
+    printf("Entrer lettres a INCLURE (ex: ae) : ");
     scanf("%s", incluses);
 
-    printf("Entrer les lettres a EXCLURE (ex: zx) : ");
+    printf("Entrer lettres a EXCLURE (ex: zx) : ");
     scanf("%s", exclues);
+
+    printf("Entrer substring (ex: li) : ");
+    scanf("%s", substring);
 
     printf("\nMots filtres :\n");
 
@@ -32,7 +36,7 @@ int main() {
 
         int valide = 1;
 
-        // Vérifier les lettres incluses
+        // Inclusion
         for (int i = 0; incluses[i] != '\0'; i++) {
             if (!contient_lettre(word, incluses[i])) {
                 valide = 0;
@@ -40,11 +44,18 @@ int main() {
             }
         }
 
-        // Vérifier les lettres exclues
+        // Exclusion
         for (int i = 0; exclues[i] != '\0'; i++) {
             if (!exclut_lettre(word, exclues[i])) {
                 valide = 0;
                 break;
+            }
+        }
+
+        // Substring
+        if (valide && strlen(substring) > 0) {
+            if (!contient_substring(word, substring)) {
+                valide = 0;
             }
         }
 
@@ -56,3 +67,4 @@ int main() {
     fclose(file);
     return 0;
 }
+
