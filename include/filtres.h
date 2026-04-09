@@ -3,5 +3,6 @@
 
 int contient_lettre(char *mot, char lettre);
 int exclut_lettre(char *mot, char lettre);
+int contient_substring(char *mot, char *substring);
 
 #endif
