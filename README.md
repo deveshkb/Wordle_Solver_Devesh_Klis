@@ -13,6 +13,9 @@ Le programme utilise plusieurs filtres :
 ## Compilation
 
 ```bash
+mkdir bin
+```
+```bash
 gcc src/main.c src/filtres.c -o bin/wordle_solver
 ```
 
